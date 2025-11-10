@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 eval "$(starship init zsh)"
 export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
@@ -56,16 +63,17 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-:while [[ condition ]]; do
+#:while [[ condition ]]; do
   
-done
+#done
 
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$HOME/.local/share/omarchy/bin:$PATH"
-eval "$(~/.local/bin/mise activate zsh)"
+#TODO fix this
+#eval "$(~/.local/bin/mise activate zsh)"
 
 new_tmux () {
   session_dir=$(zoxide query --list | fzf)
@@ -98,3 +106,7 @@ alias ls='ls --color'
 alias nvim='nvim'
 alias c='clear'
 alias tm=new_tmux
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="$HOME/.local/bin:$PATH"
