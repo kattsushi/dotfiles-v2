@@ -1,3 +1,6 @@
 
 # Local MCP secrets
 mcp/.config/mcp/.env
+
+# Pi local runtime state
+.pi/
