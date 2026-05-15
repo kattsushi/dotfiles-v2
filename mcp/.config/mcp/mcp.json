@@ -1,0 +1,42 @@
+{
+  "settings": {
+    "toolPrefix": "server",
+    "idleTimeout": 10
+  },
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--browser-url",
+        "http://127.0.0.1:9222"
+      ],
+      "lifecycle": "lazy"
+    },
+    "github": {
+      "command": "bash",
+      "args": [
+        "-lc",
+        "set -a; [ -f \"$HOME/.config/mcp/.env\" ] && . \"$HOME/.config/mcp/.env\"; set +a; exec npx -y @modelcontextprotocol/server-github"
+      ],
+      "lifecycle": "lazy"
+    },
+    "linear": {
+      "url": "https://mcp.linear.app/mcp",
+      "lifecycle": "lazy"
+    },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp",
+      "lifecycle": "lazy"
+    },
+    "postgres": {
+      "command": "bash",
+      "args": [
+        "-lc",
+        "set -a; [ -f \"$HOME/.config/mcp/.env\" ] && . \"$HOME/.config/mcp/.env\"; set +a; exec docker run -i --rm -e DATABASE_URI crystaldba/postgres-mcp --access-mode=unrestricted"
+      ],
+      "lifecycle": "lazy"
+    }
+  }
+}
