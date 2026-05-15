@@ -18,7 +18,7 @@
       "command": "bash",
       "args": [
         "-lc",
-        "set -a; [ -f \"$HOME/.config/mcp/.env\" ] && . \"$HOME/.config/mcp/.env\"; set +a; exec npx -y @modelcontextprotocol/server-github"
+        "set -a; [ -f \"${DOTFILES_DIR:-$HOME/dotfiles}/.env\" ] && . \"${DOTFILES_DIR:-$HOME/dotfiles}/.env\"; set +a; exec npx -y @modelcontextprotocol/server-github"
       ],
       "lifecycle": "lazy"
     },
@@ -34,7 +34,7 @@
       "command": "bash",
       "args": [
         "-lc",
-        "set -a; [ -f \"$HOME/.config/mcp/.env\" ] && . \"$HOME/.config/mcp/.env\"; set +a; exec docker run -i --rm -e DATABASE_URI crystaldba/postgres-mcp --access-mode=unrestricted"
+        "set -a; [ -f \"${DOTFILES_DIR:-$HOME/dotfiles}/.env\" ] && . \"${DOTFILES_DIR:-$HOME/dotfiles}/.env\"; set +a; exec docker run -i --rm -e DATABASE_URI crystaldba/postgres-mcp --access-mode=unrestricted"
       ],
       "lifecycle": "lazy"
     }

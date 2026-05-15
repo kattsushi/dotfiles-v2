@@ -1,6 +1,11 @@
-
-# Local MCP secrets
-mcp/.config/mcp/.env
+# Local secrets
+.env
 
 # Pi local runtime state
 .pi/
+
+# Machine-local shell overrides
+zshrc/.config/zsh/local.zsh
+
+# Local ATL cache
+.atl/.skill-registry.cache.json

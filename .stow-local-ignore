@@ -1,5 +1,10 @@
 README.org
+README.md
+.env
+.env.example
+.atl
 docs
+install
 .gitignore
 .git
 installer.sh
