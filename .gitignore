@@ -9,3 +9,6 @@ zshrc/.config/zsh/local.zsh
 
 # Local ATL cache
 .atl/.skill-registry.cache.json
+
+# Local backup files
+*.broken-sdd-backup
