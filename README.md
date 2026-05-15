@@ -42,6 +42,7 @@ STOW_ACTION=restow ./install/stow.sh linux
 - Starship is the prompt source of truth. Powerlevel10k is intentionally not initialized.
 - `ghostty-linux` and `ghostty-darwin` target the same Ghostty config path, so install only the one for the current OS.
 - `nvim` is LazyVim and remains the only Neovim source of truth.
+- OpenCode is intentionally not stowed; `gentle-ai` owns `~/.config/opencode`.
 - `systems/darwin` stores the nix-darwin flake; it is not stowed.
 - `.atl/skill-registry.md` stores the Gentle AI/Engram skill registry as a repo-level artifact; it is not stowed.
 - Root `.env` and `zshrc/.config/zsh/local.zsh` are local-only and ignored.
